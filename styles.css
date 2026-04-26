@@ -429,12 +429,35 @@ section, footer, header { position: relative; z-index: 1; }
 .location-section {
   padding-bottom: 80px;
   text-align: center;
+  perspective: 1000px;
 }
 
 .loc-logo { 
-  height: 60px; 
-  margin: 0 auto 30px; 
-  filter: drop-shadow(0 0 10px rgba(57,197,238,0.2)); 
+  height: 200px; 
+  margin: 0 auto 40px; 
+  filter: drop-shadow(0 20px 40px rgba(57,197,238,0.3)); 
+  animation: float3D 12s ease-in-out infinite;
+  display: block;
+  transform-style: preserve-3d;
+}
+
+@keyframes float3D {
+  /* 0s - 1s: Gira 360 grados */
+  0% { transform: translateY(0) rotateY(0deg); }
+  8% { transform: translateY(-15px) rotateY(360deg); }
+  
+  /* 1s - 6s: Se queda flotando en posición */
+  25% { transform: translateY(-30px) rotateY(360deg); }
+  42% { transform: translateY(-15px) rotateY(360deg); }
+  
+  /* 6s - 7s: Gira de vuelta (se devuelve) */
+  50% { transform: translateY(0) rotateY(360deg); }
+  58% { transform: translateY(-15px) rotateY(0deg); }
+  
+  /* 7s - 12s: Se queda flotando en posición original */
+  75% { transform: translateY(-30px) rotateY(0deg); }
+  92% { transform: translateY(-15px) rotateY(0deg); }
+  100% { transform: translateY(0) rotateY(0deg); }
 }
 
 .loc-card {
@@ -578,27 +601,7 @@ section, footer, header { position: relative; z-index: 1; }
   height: auto !important;
 }
 
-.qr-logo-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  background: white;
-  border-radius: 12px;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
 
-.qr-logo-overlay img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
 
 .qr-footer {
   display: flex;
