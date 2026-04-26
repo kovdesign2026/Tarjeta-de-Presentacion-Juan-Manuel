@@ -328,7 +328,7 @@ document.getElementById('saveContactBtn').addEventListener('click', () => {
 ══════════════════════════ */
 (function () {
   // CONFIG: Cambia esto a la URL real de la CARTA DE PRESENTACIÓN cuando esté en línea
-  const PRODUCTION_URL = 'https://bsecards.com/juanmanuel'; 
+  const PRODUCTION_URL = 'https://tarjeta-de-presentacion-juan-manuel.vercel.app'; 
   
   const btn = document.getElementById('qrBtn');
   const modal = document.getElementById('qrModal');
